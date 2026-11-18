@@ -1,211 +1,203 @@
-<!-- <!DOCTYPE html>
-<html>
-<head>
-    <title>Sara Gholamhoseinian</title>
-</head>
-<body>
-    <h1>Shalam!</h1>
-    <p>Ounja coffee hasht?</p>
-</body>
-</html> -->
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Saragh</title>
+    <title>Saragh | Gravitational Wave &amp; Astrophysics</title>
+    <!-- MathJax for rendering LaTeX equations -->
+    <script>
+        MathJax = { tex: { inlineMath: [['$', '$'], ['\\(', '\\)']] } };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <style>
         :root {
-            --bg: #f8fafc;
-            --card: #ffffff;
-            --text: #0f172a;
-            --muted: #64748b;
-            --accent: #2563eb;
-            --accent-hover: #1d4ed8;
-            --border: #e2e8f0;
+            --bg: #0b0f19;
+            --surface: #131b2e;
+            --text: #e2e8f0;
+            --muted: #94a3b8;
+            --accent: #38bdf8;
+            --accent-dim: rgba(56, 189, 248, 0.15);
+            --border: #1e293b;
         }
 
-        @media (prefers-color-scheme: dark) {
-            :root {
-                --bg: #0f172a;
-                --card: #1e293b;
-                --text: #f8fafc;
-                --muted: #94a3b8;
-                --accent: #3b82f6;
-                --accent-hover: #60a5fa;
-                --border: #334155;
-            }
-        }
-
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
             background-color: var(--bg);
             color: var(--text);
-            line-height: 1.6;
-            padding: 2rem 1rem;
+            line-height: 1.65;
+            padding: 2.5rem 1.25rem;
         }
 
-        .container {
-            max-width: 680px;
-            margin: 0 auto;
-        }
+        .container { max-width: 760px; margin: 0 auto; }
 
-        header {
-            text-align: center;
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid var(--border);
             margin-bottom: 2.5rem;
+        }
+
+        .nav-brand { font-weight: 700; font-size: 1.1rem; color: var(--accent); text-decoration: none; }
+        .nav-links a { color: var(--muted); text-decoration: none; margin-left: 1.25rem; font-size: 0.95rem; }
+        .nav-links a:hover { color: var(--text); }
+
+        .hero {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+            margin-bottom: 3rem;
         }
 
         .avatar {
-            width: 96px;
-            height: 96px;
+            width: 120px;
+            height: 120px;
             border-radius: 50%;
-            background: var(--accent);
-            color: white;
-            display: inline-flex;
+            background: linear-gradient(135deg, #1e3a8a, #38bdf8);
+            display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 2.2rem;
+            font-size: 2.5rem;
             font-weight: bold;
-            margin-bottom: 1rem;
+            flex-shrink: 0;
+            border: 2px solid var(--accent);
         }
 
-        h1 {
-            font-size: 2rem;
-            margin-bottom: 0.5rem;
-        }
+        h1 { font-size: 2rem; margin-bottom: 0.25rem; }
+        .subtitle { color: var(--accent); font-size: 1rem; margin-bottom: 0.75rem; font-weight: 500; }
+        .bio { color: var(--muted); font-size: 0.98rem; margin-bottom: 1rem; }
 
-        .bio {
-            color: var(--muted);
-            font-size: 1.1rem;
-            max-width: 500px;
-            margin: 0 auto 1.5rem;
-        }
-
-        .links {
-            display: flex;
-            justify-content: center;
-            gap: 0.75rem;
-            flex-wrap: wrap;
-        }
-
-        .btn {
+        .social-links a {
             display: inline-block;
-            padding: 0.5rem 1.1rem;
-            background-color: var(--accent);
-            color: #ffffff;
+            padding: 0.35rem 0.8rem;
+            margin-right: 0.5rem;
+            margin-bottom: 0.5rem;
+            background: var(--accent-dim);
+            color: var(--accent);
+            border: 1px solid rgba(56, 189, 248, 0.3);
+            border-radius: 5px;
             text-decoration: none;
-            border-radius: 6px;
+            font-size: 0.85rem;
             font-weight: 500;
-            font-size: 0.95rem;
-            transition: background-color 0.2s;
         }
+        .social-links a:hover { background: var(--accent); color: var(--bg); }
 
-        .btn:hover {
-            background-color: var(--accent-hover);
-        }
-
-        .btn-outline {
-            background-color: transparent;
-            color: var(--text);
-            border: 1px solid var(--border);
-        }
-
-        .btn-outline:hover {
-            background-color: var(--border);
-        }
-
-        section {
-            margin-bottom: 2.5rem;
-        }
-
+        section { margin-bottom: 2.75rem; }
         h2 {
-            font-size: 1.25rem;
-            margin-bottom: 1rem;
-            padding-bottom: 0.5rem;
-            border-bottom: 1px solid var(--border);
-        }
-
-        .grid {
-            display: grid;
-            gap: 1rem;
+            font-size: 1.3rem;
+            margin-bottom: 1.1rem;
+            color: #ffffff;
+            border-left: 3px solid var(--accent);
+            padding-left: 0.75rem;
         }
 
         .card {
-            background-color: var(--card);
+            background: var(--surface);
             border: 1px solid var(--border);
             border-radius: 8px;
             padding: 1.25rem;
+            margin-bottom: 1rem;
         }
 
-        .card h3 {
-            font-size: 1.1rem;
-            margin-bottom: 0.35rem;
-        }
+        .card h3 { font-size: 1.08rem; margin-bottom: 0.4rem; color: #f8fafc; }
+        .card p { color: var(--muted); font-size: 0.94rem; }
 
-        .card p {
-            color: var(--muted);
-            font-size: 0.95rem;
-            margin-bottom: 0.75rem;
+        .pub-item {
+            padding: 0.9rem 0;
+            border-bottom: 1px solid var(--border);
         }
-
-        .card a {
+        .pub-title { font-weight: 600; color: #f8fafc; }
+        .pub-authors { font-size: 0.9rem; color: var(--muted); margin: 0.2rem 0; }
+        .pub-links a {
             color: var(--accent);
+            font-size: 0.85rem;
+            margin-right: 0.75rem;
             text-decoration: none;
-            font-size: 0.9rem;
-            font-weight: 500;
         }
-
-        .card a:hover {
-            text-decoration: underline;
-        }
+        .pub-links a:hover { text-decoration: underline; }
 
         footer {
             text-align: center;
             color: var(--muted);
             font-size: 0.85rem;
             margin-top: 3rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid var(--border);
+        }
+
+        @media (max-width: 600px) {
+            .hero { flex-direction: column; text-align: center; }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <header>
-            <!-- Replace with <img src="photo.jpg" alt="Saragh" class="avatar"> if you upload a photo -->
-            <div class="avatar">S</div>
-            <h1>Hi, I'm Saragh</h1>
-            <p class="bio">Welcome to my corner of the internet. Here you can find my latest projects, thoughts, and ways to get in touch.</p>
-            <div class="links">
-                <a href="https://github.com/saragh" class="btn" target="_blank">GitHub</a>
-                <a href="mailto:hello@example.com" class="btn btn-outline">Email Me</a>
-                <a href="#" class="btn btn-outline">LinkedIn</a>
+        <nav>
+            <a href="#" class="nav-brand">saragh.github.io</a>
+            <div class="nav-links">
+                <a href="#research">Research</a>
+                <a href="#publications">Publications</a>
+                <a href="#cv">CV</a>
             </div>
-        </header>
+        </nav>
 
-        <section>
-            <h2>Projects</h2>
-            <div class="grid">
-                <div class="card">
-                    <h3>Project One</h3>
-                    <p>A brief description of what this project does, the problem it solves, or what you learned building it.</p>
-                    <a href="#">View Project →</a>
+        <div class="hero">
+            <!-- Replace with <img src="profile.jpg" alt="Saragh" class="avatar"> -->
+            <div class="avatar">S</div>
+            <div>
+                <h1>Saragh</h1>
+                <div class="subtitle">Astronomy &amp; Gravitational-Wave Astrophysics Student</div>
+                <p class="bio">
+                    I study compact binary coalescences, gravitational-wave data analysis, and parameter estimation ($h(t) = F_+ h_+ + F_\times h_\times$). Currently at [Your University / Institute].
+                </p>
+                <div class="social-links">
+                    <a href="https://github.com/saragh" target="_blank">GitHub</a>
+                    <a href="https://orcid.org/" target="_blank">ORCID</a>
+                    <a href="https://ui.adsabs.harvard.edu/" target="_blank">NASA ADS</a>
+                    <a href="https://arxiv.org/" target="_blank">arXiv</a>
+                    <a href="mailto:you@university.edu">Email</a>
                 </div>
-                <div class="card">
-                    <h3>Project Two</h3>
-                    <p>Another project or article highlight. You can copy and paste this card block to add as many as you want.</p>
-                    <a href="#">View Project →</a>
+            </div>
+        </div>
+
+        <section id="research">
+            <h2>Research Interests</h2>
+            <div class="card">
+                <h3>Compact Binary Parameter Estimation &amp; Waveforms</h3>
+                <p>Investigating binary black hole (BBH) and neutron star mergers using Bayesian inference, matched filtering, and numerical relativity surrogate models.</p>
+            </div>
+            <div class="card">
+                <h3>Detector Characterization &amp; Noise Modeling</h3>
+                <p>Analyzing non-stationary noise transients (glitches) and power spectral density estimation in ground-based interferometers (LIGO/Virgo/KAGRA) and future space-based missions (LISA).</p>
+            </div>
+        </section>
+
+        <section id="publications">
+            <h2>Publications &amp; Preprints</h2>
+            <div class="pub-item">
+                <div class="pub-title">Title of Your Paper or Preprint</div>
+                <div class="pub-authors"><strong>Saragh</strong>, Co-Author A., Co-Author B. (2026) — <em>Submitted to ApJ / PRD</em></div>
+                <div class="pub-links">
+                    <a href="#">[arXiv:2601.00000]</a>
+                    <a href="#">[NASA ADS]</a>
+                    <a href="#">[Code]</a>
                 </div>
             </div>
         </section>
 
+        <section id="cv">
+            <h2>Curriculum Vitae</h2>
+            <p style="color: var(--muted); font-size: 0.95rem;">
+                Upload your PDF CV to your repository as <code>cv.pdf</code> and link it here: 
+                <a href="cv.pdf" style="color: var(--accent);">Download Full CV (PDF) →</a>
+            </p>
+        </section>
+
         <footer>
-            <p>© 2026 Saragh · Hosted on GitHub Pages</p>
+            <p>© 2026 Saragh · Built with GitHub Pages</p>
         </footer>
     </div>
 </body>
