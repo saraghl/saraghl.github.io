@@ -27,71 +27,99 @@
             background-color: var(--bg);
             color: var(--text);
             line-height: 1.65;
-            padding: 2.5rem 1.25rem;
+            padding: 2rem 1.5rem;
         }
 
-        .container { max-width: 760px; margin: 0 auto; }
+        .wrapper {
+            max-width: 1020px;
+            margin: 0 auto;
+        }
 
         nav {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding-bottom: 2rem;
+            padding-bottom: 1.5rem;
             border-bottom: 1px solid var(--border);
             margin-bottom: 2.5rem;
         }
 
         .nav-brand { font-weight: 700; font-size: 1.1rem; color: var(--accent); text-decoration: none; }
-        .nav-links a { color: var(--muted); text-decoration: none; margin-left: 1.25rem; font-size: 0.95rem; }
+        .nav-links a { color: var(--muted); text-decoration: none; margin-left: 1.5rem; font-size: 0.95rem; }
         .nav-links a:hover { color: var(--text); }
 
-        .hero {
-            display: flex;
-            gap: 2rem;
-            align-items: center;
-            margin-bottom: 3rem;
+        /* Two-Column Academic Layout */
+        .page-grid {
+            display: grid;
+            grid-template-columns: 260px 1fr;
+            gap: 3rem;
+            align-items: start;
+        }
+
+        /* Left Sidebar */
+        .sidebar {
+            position: sticky;
+            top: 2rem;
+            text-align: center;
         }
 
         .avatar {
-            width: 120px;
-            height: 120px;
+            width: 170px;
+            height: 170px;
             border-radius: 50%;
+            object-fit: cover;
             background: linear-gradient(135deg, #1e3a8a, #38bdf8);
-            display: flex;
+            display: inline-flex;
             align-items: center;
             justify-content: center;
-            font-size: 2.5rem;
+            font-size: 3.5rem;
             font-weight: bold;
-            flex-shrink: 0;
             border: 2px solid var(--accent);
+            margin-bottom: 1.25rem;
         }
 
-        h1 { font-size: 2rem; margin-bottom: 0.25rem; }
-        .subtitle { color: var(--accent); font-size: 1rem; margin-bottom: 0.75rem; font-weight: 500; }
-        .bio { color: var(--muted); font-size: 0.98rem; margin-bottom: 1rem; }
+        .sidebar h1 { font-size: 1.75rem; margin-bottom: 0.25rem; }
+        .subtitle { color: var(--accent); font-size: 0.95rem; margin-bottom: 0.75rem; font-weight: 500; }
+        .affiliation { color: var(--muted); font-size: 0.9rem; margin-bottom: 1.25rem; }
+
+        .social-links {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
 
         .social-links a {
-            display: inline-block;
-            padding: 0.35rem 0.8rem;
-            margin-right: 0.5rem;
-            margin-bottom: 0.5rem;
-            background: var(--accent-dim);
-            color: var(--accent);
-            border: 1px solid rgba(56, 189, 248, 0.3);
-            border-radius: 5px;
+            display: block;
+            padding: 0.45rem 0.8rem;
+            background: var(--surface);
+            color: var(--text);
+            border: 1px solid var(--border);
+            border-radius: 6px;
             text-decoration: none;
-            font-size: 0.85rem;
+            font-size: 0.88rem;
             font-weight: 500;
+            transition: all 0.2s;
         }
-        .social-links a:hover { background: var(--accent); color: var(--bg); }
+        .social-links a:hover {
+            border-color: var(--accent);
+            color: var(--accent);
+            background: var(--accent-dim);
+        }
 
-        section { margin-bottom: 2.75rem; }
-        h2 {
+        /* Right Main Content */
+        .main-content section { margin-bottom: 2.75rem; }
+        .main-content h2 {
             font-size: 1.3rem;
             margin-bottom: 1.1rem;
             color: #ffffff;
             border-left: 3px solid var(--accent);
             padding-left: 0.75rem;
+        }
+
+        .about-text {
+            color: var(--muted);
+            font-size: 1rem;
+            margin-bottom: 1rem;
         }
 
         .card {
@@ -128,73 +156,92 @@
             border-top: 1px solid var(--border);
         }
 
-        @media (max-width: 600px) {
-            .hero { flex-direction: column; text-align: center; }
+        /* Responsive stack for phones */
+        @media (max-width: 768px) {
+            .page-grid { grid-template-columns: 1fr; gap: 2rem; }
+            .sidebar { position: static; }
+            .social-links { flex-direction: row; flex-wrap: wrap; justify-content: center; }
         }
     </style>
 </head>
 <body>
-    <div class="container">
+    <div class="wrapper">
         <nav>
             <a href="#" class="nav-brand">saragh.github.io</a>
             <div class="nav-links">
+                <a href="#about">About</a>
                 <a href="#research">Research</a>
                 <a href="#publications">Publications</a>
                 <a href="#cv">CV</a>
             </div>
         </nav>
 
-        <div class="hero">
-            <!-- Replace with <img src="profile.jpg" alt="Saragh" class="avatar"> -->
-            <div class="avatar">S</div>
-            <div>
+        <div class="page-grid">
+            <!-- LEFT COLUMN: Photo & Links -->
+            <aside class="sidebar">
+                <!-- To use your photo: upload profile.jpg to GitHub, delete the <div> below, and uncomment the <img> line -->
+                <!-- <img src="profile.jpg" alt="Saragh" class="avatar"> -->
+                <div class="avatar">S</div>
+
                 <h1>Saragh</h1>
-                <div class="subtitle">Astronomy &amp; Gravitational-Wave Astrophysics Student</div>
-                <p class="bio">
-                    I study compact binary coalescences, gravitational-wave data analysis, and parameter estimation ($h(t) = F_+ h_+ + F_\times h_\times$). Currently at [Your University / Institute].
-                </p>
+                <div class="subtitle">Gravitational-Wave Astrophysics</div>
+                <div class="affiliation">Department of Physics &amp; Astronomy<br>[Your University]</div>
+
                 <div class="social-links">
+                    <a href="mailto:you@university.edu">Email</a>
                     <a href="https://github.com/saragh" target="_blank">GitHub</a>
                     <a href="https://orcid.org/" target="_blank">ORCID</a>
                     <a href="https://ui.adsabs.harvard.edu/" target="_blank">NASA ADS</a>
                     <a href="https://arxiv.org/" target="_blank">arXiv</a>
-                    <a href="mailto:you@university.edu">Email</a>
                 </div>
-            </div>
+            </aside>
+
+            <!-- RIGHT COLUMN: Bio, Research, Publications -->
+            <main class="main-content">
+                <section id="about">
+                    <h2>About Me</h2>
+                    <p class="about-text">
+                        I am an astronomy student focusing on compact binary coalescences, gravitational-wave data analysis, and parameter estimation ($h(t) = F_+ h_+ + F_\times h_\times$).
+                    </p>
+                    <p class="about-text">
+                        My work explores how next-generation detectors and Bayesian inference pipelines extract astrophysical population properties from binary black hole and neutron star mergers.
+                    </p>
+                </section>
+
+                <section id="research">
+                    <h2>Research Interests</h2>
+                    <div class="card">
+                        <h3>Compact Binary Parameter Estimation &amp; Waveforms</h3>
+                        <p>Investigating binary black hole (BBH) and neutron star mergers using Bayesian inference, matched filtering, and numerical relativity surrogate models.</p>
+                    </div>
+                    <div class="card">
+                        <h3>Detector Characterization &amp; Noise Modeling</h3>
+                        <p>Analyzing non-stationary noise transients (glitches) and power spectral density estimation in ground-based interferometers (LIGO/Virgo/KAGRA) and space-based missions (LISA).</p>
+                    </div>
+                </section>
+
+                <section id="publications">
+                    <h2>Publications &amp; Preprints</h2>
+                    <div class="pub-item">
+                        <div class="pub-title">Title of Your Paper or Preprint</div>
+                        <div class="pub-authors"><strong>Saragh</strong>, Co-Author A., Co-Author B. (2026) — <em>Submitted to ApJ / PRD</em></div>
+                        <div class="pub-links">
+                            <a href="#">[arXiv:2601.00000]</a>
+                            <a href="#">[NASA ADS]</a>
+                            <a href="#">[Code]</a>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="cv">
+                    <h2>Curriculum Vitae</h2>
+                    <p style="color: var(--muted); font-size: 0.95rem;">
+                        Upload your PDF CV to your repository as <code>cv.pdf</code> and link it here: 
+                        <a href="cv.pdf" style="color: var(--accent);">Download Full CV (PDF) →</a>
+                    </p>
+                </section>
+            </main>
         </div>
-
-        <section id="research">
-            <h2>Research Interests</h2>
-            <div class="card">
-                <h3>Compact Binary Parameter Estimation &amp; Waveforms</h3>
-                <p>Investigating binary black hole (BBH) and neutron star mergers using Bayesian inference, matched filtering, and numerical relativity surrogate models.</p>
-            </div>
-            <div class="card">
-                <h3>Detector Characterization &amp; Noise Modeling</h3>
-                <p>Analyzing non-stationary noise transients (glitches) and power spectral density estimation in ground-based interferometers (LIGO/Virgo/KAGRA) and future space-based missions (LISA).</p>
-            </div>
-        </section>
-
-        <section id="publications">
-            <h2>Publications &amp; Preprints</h2>
-            <div class="pub-item">
-                <div class="pub-title">Title of Your Paper or Preprint</div>
-                <div class="pub-authors"><strong>Saragh</strong>, Co-Author A., Co-Author B. (2026) — <em>Submitted to ApJ / PRD</em></div>
-                <div class="pub-links">
-                    <a href="#">[arXiv:2601.00000]</a>
-                    <a href="#">[NASA ADS]</a>
-                    <a href="#">[Code]</a>
-                </div>
-            </div>
-        </section>
-
-        <section id="cv">
-            <h2>Curriculum Vitae</h2>
-            <p style="color: var(--muted); font-size: 0.95rem;">
-                Upload your PDF CV to your repository as <code>cv.pdf</code> and link it here: 
-                <a href="cv.pdf" style="color: var(--accent);">Download Full CV (PDF) →</a>
-            </p>
-        </section>
 
         <footer>
             <p>© 2026 Saragh · Built with GitHub Pages</p>
