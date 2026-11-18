@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html>
 <head>
     <title>Sara Gholamhoseinian</title>
@@ -6,5 +6,207 @@
 <body>
     <h1>Shalam!</h1>
     <p>Ounja coffee hasht?</p>
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saragh</title>
+    <style>
+        :root {
+            --bg: #f8fafc;
+            --card: #ffffff;
+            --text: #0f172a;
+            --muted: #64748b;
+            --accent: #2563eb;
+            --accent-hover: #1d4ed8;
+            --border: #e2e8f0;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg: #0f172a;
+                --card: #1e293b;
+                --text: #f8fafc;
+                --muted: #94a3b8;
+                --accent: #3b82f6;
+                --accent-hover: #60a5fa;
+                --border: #334155;
+            }
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            padding: 2rem 1rem;
+        }
+
+        .container {
+            max-width: 680px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 2.5rem;
+        }
+
+        .avatar {
+            width: 96px;
+            height: 96px;
+            border-radius: 50%;
+            background: var(--accent);
+            color: white;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.2rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .bio {
+            color: var(--muted);
+            font-size: 1.1rem;
+            max-width: 500px;
+            margin: 0 auto 1.5rem;
+        }
+
+        .links {
+            display: flex;
+            justify-content: center;
+            gap: 0.75rem;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.5rem 1.1rem;
+            background-color: var(--accent);
+            color: #ffffff;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: background-color 0.2s;
+        }
+
+        .btn:hover {
+            background-color: var(--accent-hover);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            color: var(--text);
+            border: 1px solid var(--border);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--border);
+        }
+
+        section {
+            margin-bottom: 2.5rem;
+        }
+
+        h2 {
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .grid {
+            display: grid;
+            gap: 1rem;
+        }
+
+        .card {
+            background-color: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 1.25rem;
+        }
+
+        .card h3 {
+            font-size: 1.1rem;
+            margin-bottom: 0.35rem;
+        }
+
+        .card p {
+            color: var(--muted);
+            font-size: 0.95rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .card a {
+            color: var(--accent);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .card a:hover {
+            text-decoration: underline;
+        }
+
+        footer {
+            text-align: center;
+            color: var(--muted);
+            font-size: 0.85rem;
+            margin-top: 3rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <!-- Replace with <img src="photo.jpg" alt="Saragh" class="avatar"> if you upload a photo -->
+            <div class="avatar">S</div>
+            <h1>Hi, I'm Saragh</h1>
+            <p class="bio">Welcome to my corner of the internet. Here you can find my latest projects, thoughts, and ways to get in touch.</p>
+            <div class="links">
+                <a href="https://github.com/saragh" class="btn" target="_blank">GitHub</a>
+                <a href="mailto:hello@example.com" class="btn btn-outline">Email Me</a>
+                <a href="#" class="btn btn-outline">LinkedIn</a>
+            </div>
+        </header>
+
+        <section>
+            <h2>Projects</h2>
+            <div class="grid">
+                <div class="card">
+                    <h3>Project One</h3>
+                    <p>A brief description of what this project does, the problem it solves, or what you learned building it.</p>
+                    <a href="#">View Project →</a>
+                </div>
+                <div class="card">
+                    <h3>Project Two</h3>
+                    <p>Another project or article highlight. You can copy and paste this card block to add as many as you want.</p>
+                    <a href="#">View Project →</a>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <p>© 2026 Saragh · Hosted on GitHub Pages</p>
+        </footer>
+    </div>
 </body>
 </html>
