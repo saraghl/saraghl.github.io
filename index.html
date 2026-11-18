@@ -120,4 +120,158 @@
 
         .about-text {
             color: var(--muted);
-            font
+            font-size: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 1.25rem;
+            margin-bottom: 1rem;
+        }
+
+        .card h3 { font-size: 1.08rem; margin-bottom: 0.4rem; color: #f8fafc; }
+        .card p { color: var(--muted); font-size: 0.94rem; }
+
+        .meta-tag {
+            display: inline-block;
+            font-size: 0.8rem;
+            color: var(--accent);
+            margin-bottom: 0.4rem;
+            font-weight: 500;
+        }
+
+        .pub-item {
+            padding: 0.9rem 0;
+            border-bottom: 1px solid var(--border);
+        }
+        .pub-title { font-weight: 600; color: #f8fafc; }
+        .pub-authors { font-size: 0.9rem; color: var(--muted); margin: 0.2rem 0; }
+        .pub-links a {
+            color: var(--accent);
+            font-size: 0.85rem;
+            margin-right: 0.75rem;
+            text-decoration: none;
+        }
+        .pub-links a:hover { text-decoration: underline; }
+
+        footer {
+            text-align: center;
+            color: var(--muted);
+            font-size: 0.85rem;
+            margin-top: 3rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid var(--border);
+        }
+
+        /* Responsive stack for phones */
+        @media (max-width: 768px) {
+            .page-grid { grid-template-columns: 1fr; gap: 2rem; }
+            .sidebar { position: static; }
+            .social-links { flex-direction: row; flex-wrap: wrap; justify-content: center; }
+            .nav-links a { margin-left: 0.9rem; font-size: 0.9rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <nav>
+            <a href="#" class="nav-brand">saragh.github.io</a>
+            <div class="nav-links">
+                <a href="#about">About</a>
+                <a href="#research">Research</a>
+                <a href="#publications">Publications</a>
+                <a href="#teaching">Teaching</a>
+                <a href="#cv">CV</a>
+            </div>
+        </nav>
+
+        <div class="page-grid">
+            <!-- LEFT COLUMN: Photo & Links -->
+            <aside class="sidebar">
+                <!-- To use your photo: upload profile.jpg to GitHub, delete the <div> below, and uncomment the <img> line -->
+                <!-- <img src="profile.jpg" alt="Saragh" class="avatar"> -->
+                <div class="avatar">S</div>
+
+                <h1>Saragh</h1>
+                <div class="subtitle">Gravitational-Wave Astrophysics</div>
+                <div class="affiliation">Department of Physics &amp; Astronomy<br>[Your University]</div>
+
+                <div class="social-links">
+                    <a href="mailto:you@university.edu">Email</a>
+                    <a href="https://github.com/saragh" target="_blank">GitHub</a>
+                    <a href="https://orcid.org/" target="_blank">ORCID</a>
+                    <a href="https://ui.adsabs.harvard.edu/" target="_blank">NASA ADS</a>
+                    <a href="https://arxiv.org/" target="_blank">arXiv</a>
+                </div>
+            </aside>
+
+            <!-- RIGHT COLUMN: Bio, Research, Publications, Teaching, CV -->
+            <main class="main-content">
+                <section id="about">
+                    <h2>About Me</h2>
+                    <p class="about-text">
+                        I am an astronomy student focusing on compact binary coalescences, gravitational-wave data analysis, and parameter estimation ($h(t) = F_+ h_+ + F_\times h_\times$).
+                    </p>
+                    <p class="about-text">
+                        My work explores how next-generation detectors and Bayesian inference pipelines extract astrophysical population properties from binary black hole and neutron star mergers.
+                    </p>
+                </section>
+
+                <section id="research">
+                    <h2>Research Interests</h2>
+                    <div class="card">
+                        <h3>Compact Binary Parameter Estimation &amp; Waveforms</h3>
+                        <p>Investigating binary black hole (BBH) and neutron star mergers using Bayesian inference, matched filtering, and numerical relativity surrogate models.</p>
+                    </div>
+                    <div class="card">
+                        <h3>Detector Characterization &amp; Noise Modeling</h3>
+                        <p>Analyzing non-stationary noise transients (glitches) and power spectral density estimation in ground-based interferometers (LIGO/Virgo/KAGRA) and space-based missions (LISA).</p>
+                    </div>
+                </section>
+
+                <section id="publications">
+                    <h2>Publications &amp; Preprints</h2>
+                    <div class="pub-item">
+                        <div class="pub-title">Title of Your Paper or Preprint</div>
+                        <div class="pub-authors"><strong>Saragh</strong>, Co-Author A., Co-Author B. (2026) — <em>Submitted to ApJ / PRD</em></div>
+                        <div class="pub-links">
+                            <a href="#">[arXiv:2601.00000]</a>
+                            <a href="#">[NASA ADS]</a>
+                            <a href="#">[Code]</a>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="teaching">
+                    <h2>Teaching</h2>
+                    <div class="card">
+                        <div class="meta-tag">Fall 2026 · Teaching Assistant</div>
+                        <h3>PHYS 101: Introduction to Astrophysics &amp; Cosmology</h3>
+                        <p>Led weekly recitation sections, graded problem sets on orbital mechanics and stellar structure, and held office hours for 60+ undergraduate students.</p>
+                    </div>
+                    <div class="card">
+                        <div class="meta-tag">Spring 2026 · Lab Instructor</div>
+                        <h3>ASTR 210: Observational Astronomy Lab</h3>
+                        <p>Supervised night-sky telescope observations, CCD image reduction in Python (Astropy), and photometry data analysis workshops.</p>
+                    </div>
+                </section>
+
+                <section id="cv">
+                    <h2>Curriculum Vitae</h2>
+                    <p style="color: var(--muted); font-size: 0.95rem;">
+                        Upload your PDF CV to your repository as <code>cv.pdf</code> and link it here: 
+                        <a href="cv.pdf" style="color: var(--accent);">Download Full CV (PDF) →</a>
+                    </p>
+                </section>
+            </main>
+        </div>
+
+        <footer>
+            <p>© 2026 Saragh · Built with GitHub Pages</p>
+        </footer>
+    </div>
+</body>
+</html>
