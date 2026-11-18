@@ -162,11 +162,15 @@
         }
 
         .pub-item {
-            padding: 0.9rem 0;
+            padding: 1rem 0;
             border-bottom: 1px solid var(--border);
         }
-        .pub-title { font-weight: 600; color: #f8fafc; }
-        .pub-authors { font-size: 0.9rem; color: var(--muted); margin: 0.2rem 0; }
+        .pub-item:last-child {
+            border-bottom: none;
+        }
+        .pub-title { font-weight: 600; color: #f8fafc; line-height: 1.45; }
+        .pub-authors { font-size: 0.9rem; color: var(--muted); margin: 0.25rem 0; }
+        .pub-venue { font-size: 0.9rem; color: #cbd5e1; margin-bottom: 0.35rem; }
         .pub-links a {
             color: var(--accent);
             font-size: 0.85rem;
@@ -245,31 +249,49 @@
                         I am a researcher in the Department of Physics and the Weinberg Institute for Theoretical Physics at The University of Texas at Austin, focusing on gravitational-wave astrophysics, compact binary coalescences, and parameter estimation ($h(t) = F_+ h_+ + F_\times h_\times$).
                     </p>
                     <p class="about-text">
-                        My work explores how gravitational-wave observations and theoretical modeling reveal the astrophysics of compact objects and strong-field gravity.
+                        My work explores how gravitational-wave observations, normalizing flows, and theoretical modeling reveal the astrophysics of compact objects and strong-field gravity.
                     </p>
                 </section>
 
                 <section id="research">
                     <h2>Research Interests</h2>
                     <div class="card">
-                        <h3>Compact Binary Parameter Estimation &amp; Waveforms</h3>
-                        <p>Investigating binary black hole (BBH) and neutron star mergers using Bayesian inference, matched filtering, and analytical/numerical waveform models.</p>
+                        <h3>Compact Binary Parameter Estimation &amp; Detectability</h3>
+                        <p>Modeling spin-dependent detectability, selection effects, and Bayesian inference in gravitational-wave astronomy using normalizing flows and waveform models.</p>
                     </div>
                     <div class="card">
-                        <h3>Gravitational-Wave Data Analysis &amp; Astrophysics</h3>
-                        <p>Extracting astrophysical population properties and testing strong-field gravity with ground-based and space-based gravitational-wave detectors.</p>
+                        <h3>Dark Matter Spikes, Modified Gravity &amp; Cosmology</h3>
+                        <p>Investigating compact binary merger rates in dark matter spikes under modified gravity, as well as 21-cm cosmology from the Epoch of Reionization.</p>
                     </div>
                 </section>
 
                 <section id="publications">
                     <h2>Publications &amp; Preprints</h2>
+
                     <div class="pub-item">
-                        <div class="pub-title">Title of Your Paper or Preprint</div>
-                        <div class="pub-authors"><strong>S. Gholamhoseinian</strong>, Co-Author A., Co-Author B. (2026) — <em>Submitted to PRD / ApJ</em></div>
+                        <div class="pub-title">Detectability of 21-cm Power Spectra from the Epoch of Reionization using Modern Radio Telescopes</div>
+                        <div class="pub-authors">A. B. Koochaksaraei, L. Mobahat, <strong>S. Gholamhosseinian</strong>, J. T. Firouzjaee</div>
+                        <div class="pub-venue"><em>arXiv preprint</em> arXiv:2610.16194 (2026)</div>
                         <div class="pub-links">
-                            <a href="#">[arXiv]</a>
+                            <a href="https://arxiv.org/abs/2610.16194" target="_blank" rel="noopener noreferrer">[arXiv:2610.16194]</a>
+                        </div>
+                    </div>
+
+                    <div class="pub-item">
+                        <div class="pub-title">Modeling spin-dependent detectability in gravitational-wave astronomy with a calibrated normalizing flow</div>
+                        <div class="pub-authors"><strong>S. Gholamhoseinian</strong></div>
+                        <div class="pub-venue"><em>Master's Thesis in Physics</em>, University of Massachusetts Dartmouth (2026)</div>
+                        <div class="pub-links">
                             <a href="https://scholar.google.com/citations?user=hUaRjjQAAAAJ&hl=en" target="_blank" rel="noopener noreferrer">[Google Scholar]</a>
-                            <a href="#">[Code]</a>
+                        </div>
+                    </div>
+
+                    <div class="pub-item">
+                        <div class="pub-title">Compact binary merger rate with modified gravity in dark matter spikes</div>
+                        <div class="pub-authors">S. Fakhry, <strong>S. Gholamhoseinian</strong>, M. Farhang</div>
+                        <div class="pub-venue"><em>The Astrophysical Journal</em> 976 (2), 248 (2024)</div>
+                        <div class="pub-links">
+                            <a href="https://scholar.google.com/citations?user=hUaRjjQAAAAJ&hl=en" target="_blank" rel="noopener noreferrer">[Google Scholar]</a>
                         </div>
                     </div>
                 </section>
